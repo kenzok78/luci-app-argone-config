@@ -35,8 +35,8 @@ msgstr "Un color HEX; (Predeterminado: #787399)"
 
 #: applications/luci-app-argonne-config/luasrc/controller/argonne-config.lua:11
 #: applications/luci-app-argonne-config/luasrc/model/cbi/argonne-config.lua:53
-msgid "Argon Config"
-msgstr "Configuración de Argon"
+msgid "Argonne Config"
+msgstr "Configuración de Argonne"
 
 #: applications/luci-app-argonne-config/luasrc/model/cbi/argonne-config.lua:195
 msgid "Background file list"
@@ -96,8 +96,8 @@ msgstr ""
 "predeterminado: 10)"
 
 #: applications/luci-app-argonne-config/root/usr/share/rpcd/acl.d/luci-app-argonne-config.json:3
-msgid "Luci Argon theme config"
-msgstr "Configuración del tema Luci Argon"
+msgid "Luci Argonne theme config"
+msgstr "Configuración del tema Luci Argonne"
 
 #: applications/luci-app-argonne-config/luasrc/model/cbi/argonne-config.lua:201
 msgid "Modify time"
