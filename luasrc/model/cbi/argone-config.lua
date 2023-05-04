@@ -4,7 +4,7 @@ local opkg = require 'luci.model.ipkg'
 local sys = require 'luci.sys'
 local http = require 'luci.http'
 local nutil = require 'nixio.util'
-local name = 'argonne'
+local name = 'argone'
 local uci = require 'luci.model.uci'.cursor()
 
 local fstat = nxfs.statvfs(opkg.overlay_root())
@@ -15,15 +15,15 @@ local space_used = space_total - space_free
 local free_byte = space_free * fstat.frsize
 
 local primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity, mode
-if nxfs.access('/etc/config/argonne') then
-	primary = uci:get_first('argonne', 'global', 'primary')
-	dark_primary = uci:get_first('argonne', 'global', 'dark_primary')
-	blur_radius = uci:get_first('argonne', 'global', 'blur')
-	blur_radius_dark = uci:get_first('argonne', 'global', 'blur_dark')
-	blur_opacity = uci:get_first('argonne', 'global', 'transparency')
-	blur_opacity_dark = uci:get_first('argonne', 'global', 'transparency_dark')
-	mode = uci:get_first('argonne', 'global', 'mode')
-	bing_background = uci:get_first('argonne', 'global', 'bing_background')
+if nxfs.access('/etc/config/argone') then
+	primary = uci:get_first('argone', 'global', 'primary')
+	dark_primary = uci:get_first('argone', 'global', 'dark_primary')
+	blur_radius = uci:get_first('argone', 'global', 'blur')
+	blur_radius_dark = uci:get_first('argone', 'global', 'blur_dark')
+	blur_opacity = uci:get_first('argone', 'global', 'transparency')
+	blur_opacity_dark = uci:get_first('argone', 'global', 'transparency_dark')
+	mode = uci:get_first('argone', 'global', 'mode')
+	bing_background = uci:get_first('argone', 'global', 'bing_background')
 end
 
 function glob(...)
@@ -50,7 +50,7 @@ local transparency_sets = {
 }
 
 -- [[ 模糊设置 ]]--
-br = SimpleForm('config', translate('Argonne Config'), translate('Here you can set the blur and transparency of the login page of argonne theme, and manage the background pictures and videos.[Chrome is recommended]'))
+br = SimpleForm('config', translate('Argonne Config'), translate('Here you can set the blur and transparency of the login page of argone theme, and manage the background pictures and videos.[Chrome is recommended]'))
 br.reset = false
 br.submit = false
 s = br:section(SimpleSection) 
@@ -114,9 +114,9 @@ function br.handle(self, state, data)
     if (state == FORM_VALID and data.blur ~= nil and data.blur_dark ~= nil and data.transparency ~= nil and data.transparency_dark ~= nil and data.mode ~= nil) then
         nxfs.writefile('/tmp/aaa', data)
         for key, value in pairs(data) do
-            uci:set('argonne','@global[0]',key,value)
+            uci:set('argone','@global[0]',key,value)
         end 
-        uci:commit('argonne')
+        uci:commit('argone')
     end
     return true
 end
@@ -125,14 +125,14 @@ ful = SimpleForm('upload', translate('Upload  (Free: ') .. wa.byte_format(free_b
 ful.reset = false
 ful.submit = false
 
-sul = ful:section(SimpleSection, '', translate("Upload file to '/www/luci-static/argonne/background/'"))
+sul = ful:section(SimpleSection, '', translate("Upload file to '/www/luci-static/argone/background/'"))
 fu = sul:option(FileUpload, '')
-fu.template = 'argonne-config/other_upload'
+fu.template = 'argone-config/other_upload'
 um = sul:option(DummyValue, '', nil)
-um.template = 'argonne-config/other_dvalue'
+um.template = 'argone-config/other_dvalue'
 
 local dir, fd
-dir = '/www/luci-static/argonne/background/'
+dir = '/www/luci-static/argone/background/'
 nxfs.mkdir(dir)
 http.setfilehandler(
     function(meta, chunk, eof)
@@ -156,7 +156,7 @@ http.setfilehandler(
         if eof and fd then
             fd:close()
             fd = nil
-            um.value = translate('File saved to') .. ' "/www/luci-static/argonne/background/' .. meta.file .. '"'
+            um.value = translate('File saved to') .. ' "/www/luci-static/argone/background/' .. meta.file .. '"'
         end
     end
 )
