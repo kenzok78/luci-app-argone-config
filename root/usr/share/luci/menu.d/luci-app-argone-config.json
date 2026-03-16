@@ -1,6 +1,6 @@
 {
 	"admin/system/argone-config": {
-		"title": "Argone Config",
+		"title": "Argon Config",
 		"order": 90,
 		"action": {
 			"type": "view",

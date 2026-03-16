@@ -257,8 +257,8 @@ msgstr ""
 #~ msgid "Upload (Free:"
 #~ msgstr "上傳（剩餘空間："
 
-#~ msgid "Upload file to '/www/luci-static/argon/background/'"
-#~ msgstr "上傳檔案至「/www/luci-static/argon/background」"
+#~ msgid "Upload file to '/www/luci-static/argone/background/'"
+#~ msgstr "上傳檔案至「/www/luci-static/argone/background」"
 
 #~ msgid "Wallpaper Source"
 #~ msgstr "桌布來源"

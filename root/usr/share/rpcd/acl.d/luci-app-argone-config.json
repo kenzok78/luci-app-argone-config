@@ -12,7 +12,7 @@
 		},
 		"write": {
 			"file": {
-				"/tmp/argone_background.tmp": [ "write" ]
+				"/tmp/argon_background.tmp": [ "write" ]
 			},
 			"uci": [ "argone" ]
 		}

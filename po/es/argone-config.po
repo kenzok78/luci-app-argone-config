@@ -265,8 +265,8 @@ msgstr ""
 #~ msgid "Upload (Free:"
 #~ msgstr "Cargar (Libre:"
 
-#~ msgid "Upload file to '/www/luci-static/argon/background/'"
-#~ msgstr "Subir archivo a '/www/luci-static/argon/background/'"
+#~ msgid "Upload file to '/www/luci-static/argone/background/'"
+#~ msgstr "Subir archivo a '/www/luci-static/argone/background/'"
 
 #~ msgid "Wallpaper Source"
 #~ msgstr "Fuente del fondo de pantalla"
